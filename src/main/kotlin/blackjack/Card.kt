@@ -1,4 +1,4 @@
 package blackjack
 
-class Card {
+class Card(val number: CardNumber, val symbol: CardSymbol) {
 }
