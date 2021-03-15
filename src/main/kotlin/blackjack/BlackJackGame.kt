@@ -6,6 +6,15 @@ class BlackJackGame(val players: Players, val deck: Deck) {
     }
 
     fun play(thisTurnPlayer: Player): Player {
-        TODO("Not yet implemented")
+        if (thisTurnPlayer.isFirstCard()) {
+            thisTurnPlayer.playOneTime(getCard())
+            return thisTurnPlayer.playOneTime(getCard())
+        }
+
+        return thisTurnPlayer.playOneTime(getCard())
+    }
+
+    private fun getCard(): Card {
+        return deck.getCard()
     }
 }

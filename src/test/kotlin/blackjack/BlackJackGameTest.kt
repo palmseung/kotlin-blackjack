@@ -51,6 +51,6 @@ internal class BlackJackGameTest {
         val player = blackJackGame.play(thisTurnPlayer)
 
         // then
-        assertThat(player.cards.size).isEualto(2)
+        assertThat(player.cards.size).isEqualTo(2)
     }
 }
