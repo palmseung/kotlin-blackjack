@@ -1,7 +1,7 @@
 package blackjack
 
-import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 
 internal class PlayerTest {
     @Test
@@ -10,6 +10,6 @@ internal class PlayerTest {
         val name = "Steven"
 
         // when, then
-        assertThatThrownBy { Pleyer(name) }.doesNotThrowAnyException()
+        assertDoesNotThrow { Player(name) }
     }
 }
