@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 
-
 internal class BlackJackGameTest {
     @Test
     fun `블랙잭 게임은 Players와 Deck으로 생성된다`() {
@@ -28,9 +27,13 @@ internal class BlackJackGameTest {
         val player2: Player = blackJackGame.turn()
         val player3: Player = blackJackGame.turn()
         val player4: Player = blackJackGame.turn()
+        val player5: Player = blackJackGame.turn()
+        val player6: Player = blackJackGame.turn()
 
         // then
         assertThat(player1).isEqualTo(player4)
+        assertThat(player2).isEqualTo(player5)
+        assertThat(player3).isEqualTo(player6)
         assertThat(player1.name).isEqualTo("Kent")
         assertThat(player2.name).isEqualTo("Frank")
         assertThat(player3.name).isEqualTo("Jae")
