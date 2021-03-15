@@ -45,12 +45,21 @@ internal class BlackJackGameTest {
         val deck = Deck()
         val players = Players(listOf("Kent", "Frank", "Jae"))
         val blackJackGame = BlackJackGame(players, deck)
-        val thisTurnPlayer = blackJackGame.turn()
+
 
         // when
-        val player = blackJackGame.play(thisTurnPlayer)
+        val thisTurnPlayer = blackJackGame.turn()
+        val player1 = blackJackGame.play(thisTurnPlayer)
+
+        val nextTurnPlayer = blackJackGame.turn()
+        val player2 = blackJackGame.play(nextTurnPlayer)
+
+        val nextNextTurnPlayer = blackJackGame.turn()
+        val player3 = blackJackGame.play(nextNextTurnPlayer)
 
         // then
-        assertThat(player.cards.size).isEqualTo(2)
+        assertThat(player1.cards.size).isEqualTo(2)
+        assertThat(player2.cards.size).isEqualTo(2)
+        assertThat(player3.cards.size).isEqualTo(2)
     }
 }
