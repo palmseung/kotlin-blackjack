@@ -1,4 +1,4 @@
 package blackjack
 
-class BlackJackGame {
+class BlackJackGame(val players: Players, val deck: Deck) {
 }

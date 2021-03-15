@@ -13,6 +13,5 @@ internal class BlackJackGameTest {
 
         // when, then
         assertDoesNotThrow { BlackJackGame(players, deck) }
-
     }
 }
