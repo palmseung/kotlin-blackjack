@@ -30,6 +30,20 @@ internal class DeckTest {
         assertThat(cards.size).isEqualTo(13)
     }
 
+    @Test
+    fun `Deck에서 카드를 하나 꺼내면, 전체 카드 갯수에서 한 개가 줄어든다`() {
+        // given
+        val deck = Deck()
+        val previousCardSize = deck.cards.size
+
+        // when
+        deck.getCard()
+
+        // then
+        val currentCardSize = deck.cards.size
+        assertThat(currentCardSize).isEqualTo(previousCardSize - 1)
+    }
+
     companion object {
         @JvmStatic
         private fun provideParameters(): Stream<Arguments> {

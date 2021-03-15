@@ -11,6 +11,10 @@ class Deck {
         _cards.shuffle()
     }
 
+    fun getCard(): Card {
+        TODO("Not yet implemented")
+    }
+
     companion object {
         private var CARDS_SPADE = CardNumber.values().map { Card(it, CardSymbol.SPADE) }.toMutableList()
         private var CARDS_HEART = CardNumber.values().map { Card(it, CardSymbol.HEART) }.toMutableList()
