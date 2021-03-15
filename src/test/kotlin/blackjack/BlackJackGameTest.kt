@@ -1,5 +1,6 @@
 package blackjack
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 
@@ -13,5 +14,25 @@ internal class BlackJackGameTest {
 
         // when, then
         assertDoesNotThrow { BlackJackGame(players, deck) }
+    }
+
+    @Test
+    fun `turn을 하면, 다음 플레이어의 차례가 된다`() {
+        // given
+        val deck = Deck()
+        val players = Players(listOf("Kent", "Frank", "Jae"))
+        val blackJackGame = BlackJackGame(players, deck)
+
+        // when
+        val player1: Player = blackJackGame.turn()
+        val player2: Player = blackJackGame.turn()
+        val player3: Player = blackJackGame.turn()
+        val player4: Player = blackJackGame.turn()
+
+        // then
+        assertThat(player1).isEqualTo(player4)
+        assertThat(player1.name).isEqualTo("Kent")
+        assertThat(player2.name).isEqualTo("Frank")
+        assertThat(player3.name).isEqualTo("Jae")
     }
 }
