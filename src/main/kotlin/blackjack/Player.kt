@@ -1,4 +1,3 @@
 package blackjack
 
-class Player(val name: String) {
-}
+class Player(val name: String)
