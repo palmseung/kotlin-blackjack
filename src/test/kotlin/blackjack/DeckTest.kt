@@ -35,13 +35,14 @@ internal class DeckTest {
         // given
         val deck = Deck()
         val previousCardSize = deck.cards.size
+        assertThat(previousCardSize).isEqualTo(52)
 
         // when
         deck.getCard()
 
         // then
         val currentCardSize = deck.cards.size
-        assertThat(currentCardSize).isEqualTo(previousCardSize - 1)
+        assertThat(currentCardSize).isEqualTo(51)
     }
 
     companion object {
