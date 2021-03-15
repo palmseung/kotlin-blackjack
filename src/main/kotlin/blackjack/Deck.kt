@@ -12,14 +12,15 @@ class Deck {
     }
 
     fun getCard(): Card {
-        val card = _cards[ZERO_INDEX]
-        _cards = _cards.subList(1, _cards.size)
+        val card = _cards[INDEX_ZERO]
+        _cards = _cards.subList(INDEX_ONE, _cards.size)
 
         return card
     }
 
     companion object {
-        private const val ZERO_INDEX = 0
+        private const val INDEX_ZERO = 0
+        private const val INDEX_ONE = 1
         private var CARDS_SPADE = CardNumber.values().map { Card(it, CardSymbol.SPADE) }.toMutableList()
         private var CARDS_HEART = CardNumber.values().map { Card(it, CardSymbol.HEART) }.toMutableList()
         private var CARDS_CLOVER = CardNumber.values().map { Card(it, CardSymbol.CLOVER) }.toMutableList()
