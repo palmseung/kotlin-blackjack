@@ -3,11 +3,12 @@ package blackjack
 class Deck {
     private var _cards = mutableListOf<Card>()
 
-    var cards: List<Card> = CARDS_CLOVER
+    var cards: List<Card> = listOf()
         get() = _cards
 
     init {
         _cards = CARDS
+        _cards.shuffle()
     }
 
     companion object {
